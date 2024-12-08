@@ -1,0 +1,73 @@
+/* Container to hold the entire project list */
+.project-list-container {
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+/* Styling the table cards */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Styling each individual project card */
+.project-card {
+    width: 100%;
+    max-width: 800px;  /* Maximum width for each card */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+}
+
+/* Table styling */
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.project-table th,
+.project-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.project-table th {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+.project-table td {
+    background-color: #fafafa;
+}
+
+/* Buttons for project actions */
+.project-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.project-actions button {
+    padding: 8px 16px;
+    background-color: #53b3e0   ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-actions button:hover {
+    background-color: #45a049;
+}
+
+/* No projects message */
+.no-projects-message {
+    text-align: center;
+    font-size: 18px;
+    color: #449ec4;
+}

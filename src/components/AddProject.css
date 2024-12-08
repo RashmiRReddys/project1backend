@@ -1,0 +1,130 @@
+/* Make the container fill the entire screen */
+.add-project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f4f4f9;
+    margin: 0;
+}
+
+/* The card itself takes up the full height and width, ensuring it's a square */
+.add-project-card {
+    width: 80vmin; /* 80% of the smallest viewport dimension */
+    height: 80vmin; /* Makes the card a square by setting both width and height to 80vmin */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* Title styling */
+.add-project-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.project-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    flex-grow: 1; /* Allow the form to grow and take up space */
+}
+
+.form-group {
+    width: 100%;
+}
+
+.label-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    width: 25%;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 70%; /* Adjusts input width */
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #4CAF50;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    padding: 14px 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.submit-button:focus {
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    .label-input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-group label {
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+    }
+
+    .submit-button {
+        font-size: 14px;
+        width: 100%;
+    }
+}

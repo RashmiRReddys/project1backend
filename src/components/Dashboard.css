@@ -1,0 +1,131 @@
+/* General Dashboard Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px; /* Adding space for header */
+}
+
+/* Header - Full Width */
+.dashboard-header {
+    background-color: #516c9b;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 60px; /* Below the header */
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: calc(100vh - 60px); /* Fill the height below the header */
+    background-color: #516c9b;
+    transition: 0.3s;
+    padding-top: 20px;
+    z-index: 90;
+}
+
+.sidebar.active {
+    left: 0; /* Make it visible when active */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    background-color: #34495e;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+    padding: 20px;
+    flex: 1;
+    margin-top: 60px; /* Space for the header */
+}
+
+/* When sidebar is active, shift the content */
+.main-content.sidebar-active {
+    margin-left: 250px; /* Shift the content to the right when sidebar is active */
+}
+
+.main-content .add-project-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.main-content .add-project-button:hover {
+    background-color: #45a049;
+}
+
+/* Project Count Card */
+.project-count-card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 20px;
+    top: 120px; /* Below the header */
+    width: 200px;
+}
+
+.project-count-card .project-count {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.project-count-card span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Project List (Cube) */
+.project-cube {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Sidebar toggle button when hidden on mobile */
+@media (max-width: 768px) {
+    .dashboard-header .hamburger-menu {
+        font-size: 20px;
+    }
+
+    .project-cube {
+        grid-template-columns: 1fr; /* Stack the project cubes in one column on mobile */
+    }
+
+    .project-count-card {
+        width: 70px; /* Reduce card width on smaller screens */
+        right: 7px;
+        top: 100px;
+    }
+}
